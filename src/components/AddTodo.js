@@ -29,6 +29,18 @@ class AddTodo extends Component {
   }
 
   /**
+   * Identifies the key that was pressed, and, if it is 'Enter', adds the Todo into the App's state.
+   * 
+   * @method
+   * 
+   * @param {KeyboardEvent} arg0 - an keyboard event object fired from the AddTodo's input field.
+   */
+  onKeyUp({ key }) {
+    if (key === 'Enter')
+      this.onAddTodo();
+  }
+
+  /**
    * The click handler to the button that will add the todo into the App' state.
    * 
    * @method onAddTodo
@@ -56,6 +68,7 @@ class AddTodo extends Component {
           placeholder="Add the task description"
           ref={(ref) => this.input = ref}
           onChange={() => this.onChange()}
+          onKeyUp={(e) => this.onKeyUp(e)}
           value={text} />
 
         <button onClick={() => this.onAddTodo()}>
