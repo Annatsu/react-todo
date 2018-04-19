@@ -43,12 +43,24 @@ class App extends Component {
   };
 
 
+  /**
+   * @constructor
+   * @param {Object} props 
+   */
   constructor(props) {
     super(props);
 
 
+    /**
+     * The property that will be used, incrementally, to create new todos.
+     * 
+     * @property {Number} idCounter
+     * @default 0
+     */
     this.idCounter = 0;
 
+
+    // Bind the `this` keyword to be used in this class's context.
     this.setDisplayFilter = this.setDisplayFilter.bind(this);
     this.addTodo = this.addTodo.bind(this);
   }
@@ -61,6 +73,11 @@ class App extends Component {
   }
 
 
+  /**
+   * Adds a Todo item into the Application's state.
+   * 
+   * @param {String} desc - an string representing the new todo description.
+   */
   addTodo(desc) {
     const newTodo = {
       desc,
