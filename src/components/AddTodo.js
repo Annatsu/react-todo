@@ -16,18 +16,15 @@ class AddTodo extends Component {
   }
 
   onAddTodo() {
-    
+    this.props.addTodo(this.state.text);
+    this.setState({
+      text: ''
+    });
   }
 
 
   render() {
-    const {
-      text
-    } = this.state;
-
-    const {
-      addTodo
-    } = this.props;
+    const { text } = this.state;
 
 
     return (
