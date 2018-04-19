@@ -3,7 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 
-const TodoList = ({ todos }) => (
+const TodoList = ({ todos, filter }) => (
   <ul>
     {
       todos.map((todo, i) => (
@@ -23,7 +23,8 @@ TodoList.propTypes = {
       desc: PropTypes.string.isRequired,
       completed: PropTypes.bool.isRequired
     }).isRequired
-  ).isRequired
+  ).isRequired,
+  filter: PropTypes.number
 };
 
 
