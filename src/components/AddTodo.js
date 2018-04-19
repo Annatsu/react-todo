@@ -51,8 +51,17 @@ class AddTodo extends Component {
 
     return (
       <div>
-        <input placeholder="Add the task description" ref={(ref) => this.input = ref} onChange={() => this.onChange()} value={text} />
-        <button onClick={() => this.onAddTodo()}>+</button>
+
+        <input
+          placeholder="Add the task description"
+          ref={(ref) => this.input = ref}
+          onChange={() => this.onChange()}
+          value={text} />
+
+        <button onClick={() => this.onAddTodo()}>
+          +
+        </button>
+
       </div>
     );
   }
