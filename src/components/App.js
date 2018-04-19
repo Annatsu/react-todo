@@ -63,6 +63,7 @@ class App extends Component {
 
     // Bind the `this` keyword to be used in this class's context.
     this.setDisplayFilter = this.setDisplayFilter.bind(this);
+    this.toggleTodo = this.toggleTodo.bind(this);
     this.addTodo = this.addTodo.bind(this);
   }
 
@@ -101,6 +102,17 @@ class App extends Component {
   }
 
 
+  toggleTodo(id) {
+    const todos = [ ...this.state.todos ];
+    const todoIndex = todos.findIndex((todo) => todo.id === id);
+    todos[todoIndex].completed = !todos[todoIndex].completed;
+
+    this.setState({
+      todos
+    });
+  }
+
+
   render() {
     const {
       todos,
@@ -112,7 +124,7 @@ class App extends Component {
         <AddTodo
           addTodo={this.addTodo} />
 
-        <FilterableList filter={filter} changeFilter={this.setDisplayFilter}>
+        <FilterableList filter={filter} changeFilter={this.setDisplayFilter} toggleTodo={this.toggleTodo}>
           <TodoList
             todos={todos} />
         </FilterableList>
