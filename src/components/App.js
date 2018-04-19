@@ -23,23 +23,7 @@ import Constants from "../constants";
 class App extends Component {
 
   state = {
-    todos: [
-      {
-        id: 0,
-        desc: "Study React",
-        completed: false
-      },
-      {
-        id: 1,
-        desc: "Study TDD",
-        completed: false
-      },
-      {
-        id: 2,
-        desc: "Be nice to people :)",
-        completed: false
-      }
-    ],
+    todos: [],
     filter: Constants.filters.FILTER_SHOW_ALL
   };
 
