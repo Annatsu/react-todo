@@ -19,7 +19,7 @@ const FILTER_SHOW_COMPLETED = 1;
  *
  * @constant
  */
-const FILTER_SHOW_UNCOMPLETED = 1;
+const FILTER_SHOW_UNCOMPLETED = 2;
 
 
 /**
