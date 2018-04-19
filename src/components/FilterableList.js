@@ -12,25 +12,19 @@ import Constants from "../constants";
 
 
 // HOC for the FilterButton components.
-const FilterButtons = ({ changeFilter, children }) => {
-  const _children = React.cloneElement(children, { changeFilter });
-
-  console.log('children', children)
-  console.log('_children', _children)
+const FilterButtons = ({ changeFilter, children, ...restProps }) => {
+  const _children = React.Children.toArray(children).map((child, i) => React.cloneElement(child, { changeFilter, ...restProps }));
 
   return (
     <div>
       {_children}
     </div>
   );
-}
+};
 
 
-const FilterableList = ({ filter, changeFilter, children }) => {
-  const _children = React.cloneElement(children, { filter });
-
-  console.log('filterable children', children);
-  console.log('filterable _children', _children);
+const FilterableList = ({ filter, changeFilter, children, ...restProps }) => {
+  const _children = React.Children.toArray(children).map((child, i) => React.cloneElement(child, { filter, ...restProps }));
 
   return (
     <Fragment>
