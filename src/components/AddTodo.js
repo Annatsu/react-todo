@@ -34,7 +34,12 @@ class AddTodo extends Component {
    * @method onAddTodo
    */
   onAddTodo() {
-    this.props.addTodo(this.state.text);
+    const { text } = this.state;
+
+    if (text === '')
+      return;
+
+    this.props.addTodo(text);
     this.setState({
       text: ''
     });
