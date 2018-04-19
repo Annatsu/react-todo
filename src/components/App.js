@@ -112,7 +112,7 @@ class App extends Component {
         <AddTodo
           addTodo={this.addTodo} />
 
-        <FilterableList filter={filter}>
+        <FilterableList filter={filter} changeFilter={this.setDisplayFilter}>
           <TodoList
             todos={todos} />
         </FilterableList>
