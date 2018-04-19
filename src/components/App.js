@@ -4,6 +4,7 @@ import React, { Component } from "react";
 
 // App's Components
 import TodoList from './TodoList';
+import AddTodo from './AddTodo';
 
 
 // Application's constants
@@ -42,10 +43,34 @@ class App extends Component {
   };
 
 
+  constructor(props) {
+    super(props);
+
+
+    this.idCounter = 0;
+
+    this.setDisplayFilter = this.setDisplayFilter.bind(this);
+    this.addTodo = this.addTodo.bind(this);
+  }
+
+
   setDisplayFilter(filter) {
     this.setState({
       filter
     });
+  }
+
+
+  addTodo(desc) {
+    const newTodo = {
+      desc,
+      id: this.idCounter++,
+      completed: false
+    };
+
+    this.setState((prevState) => ({
+      todos: [ ...prevState.todos, newTodo ]
+    }));
   }
 
 
@@ -57,6 +82,8 @@ class App extends Component {
 
     return (
       <div>
+        <AddTodo
+          addTodo={this.addTodo} />
         <TodoList
           todos={todos} />
       </div>
