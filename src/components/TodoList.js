@@ -13,7 +13,13 @@ const completeCompare = {
 };
 
 
-const TodoList = ({ todos, filter }) => {
+const completedStyle = {
+  textDecoration: 'line-through',
+  fontStyle: 'italic'
+};
+
+
+const TodoList = ({ todos, filter, toggleTodo }) => {
   const shownTodos = filter === Constants.filters.FILTER_SHOW_ALL
     ? todos
     : todos.filter((todo) => todo.completed === completeCompare[filter]);
@@ -22,7 +28,7 @@ const TodoList = ({ todos, filter }) => {
     <ul>
       {
         shownTodos.map((todo, i) => (
-          <li key={i}>
+          <li key={i} onClick={() => toggleTodo(todo.id)} style={todo.completed ? completedStyle : {}}>
             {todo.desc}
           </li>
         ))
@@ -40,7 +46,8 @@ TodoList.propTypes = {
       completed: PropTypes.bool.isRequired
     }).isRequired
   ).isRequired,
-  filter: PropTypes.number
+  filter: PropTypes.number,
+  toggleTodo: PropTypes.func
 };
 
 
