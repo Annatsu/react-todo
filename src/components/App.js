@@ -1,9 +1,19 @@
 // React
 import React, { Component } from 'react';
 
+
+// Application's constants
 import Constants from '../constants';
 
 
+/**
+ * The main Application's class.
+ * It will hold all of the logic and hold all of the data.
+ * 
+ * @name App
+ * @class
+ * @extends Component
+ */
 class App extends Component {
 
     state = {
@@ -50,4 +60,7 @@ class App extends Component {
 }
 
 
+/**
+ * @export App
+ */
 export default App;

@@ -26,7 +26,8 @@ export const FILTER_SHOW_UNCOMPLETED = 1;
 
 
 /**
- * @default
+ * The default export is an object containing all of the constants definition.
+ * 
  * @export
  */
 const defaultExport = {
