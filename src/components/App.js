@@ -3,6 +3,7 @@ import React, { Component } from "react";
 
 
 // App's Components
+import FilterableList from './FilterableList';
 import TodoList from './TodoList';
 import AddTodo from './AddTodo';
 
@@ -110,8 +111,11 @@ class App extends Component {
       <div>
         <AddTodo
           addTodo={this.addTodo} />
-        <TodoList
-          todos={todos} />
+
+        <FilterableList filter={filter}>
+          <TodoList
+            todos={todos} />
+        </FilterableList>
       </div>
     );
   }
