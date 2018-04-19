@@ -1,7 +1,7 @@
 // React
 import React, { Component } from 'react';
 
-const Constants = require('../constants');
+import Constants from '../constants';
 
 
 class App extends Component {
