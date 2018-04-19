@@ -11,7 +11,7 @@ const FilterButton = ({ changeFilter, filter, children }) => (
 
 
 FilterButton.propTypes = {
-  changeFilter: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func,
   filter: PropTypes.number.isRequired
 };
 
