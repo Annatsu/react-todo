@@ -66,6 +66,13 @@ class App extends Component {
   }
 
 
+  /**
+   * Changes the display filter of the Application.
+   * 
+   * @method setDisplayFilter
+   * 
+   * @param {Number} filter - an integer represented by a constant in the Constants file.
+   */
   setDisplayFilter(filter) {
     this.setState({
       filter
@@ -75,6 +82,8 @@ class App extends Component {
 
   /**
    * Adds a Todo item into the Application's state.
+   * 
+   * @method addTodo
    * 
    * @param {String} desc - an string representing the new todo description.
    */
